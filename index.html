@@ -290,22 +290,30 @@
             <!-- End Jobs Section -->
             <!-- ======= Testimonials Section ======= -->
             <section id="testimonials" class="testimonials">
-               <div class="section-title">
-                  <h2 class="animate__animated animate__fadeInRight"><span>Dicono di Noi</span></h2>
-               </div>
-               <div id="slider" class="slider-container">
-                  <div class="slider-wrapper">
-                     <div @click="sliderPrev()" class="prev">
-                        <i class="fas fa-angle-left"></i>
-                     </div>
-                     <div class="images">
-                        <img :src="imagesList[imagesIndex]" alt="">
-                     </div>
-                     <div @click="sliderNext()" class="next">
-                        <i class="fas fa-angle-right"></i>
-                     </div>
+               <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active text-center">
+                      <img class="testimonial-image" src="assets/img/testimonials/slide-1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item text-center">
+                      <img class="testimonial-image" src="assets/img/testimonials/slide-2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item text-center">
+                      <img class="testimonial-image" src="assets/img/testimonials/slide-3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item text-center">
+                     <img class="testimonial-image" src="assets/img/testimonials/slide-4.jpg" class="d-block w-100" alt="...">
+                   </div>
                   </div>
-               </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
             </section>
             <!-- End testimonials Section -->
          </main>
@@ -314,7 +322,7 @@
          <footer id="footer">
             <div class="container">
                <h3>Appets</h3>
-               <p>Artigiani della qualità and be polite ¬_¬ </p>
+               <p>Solo a Milano, vicino a te</p>
                <div class="social-links">
                   <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                   <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
