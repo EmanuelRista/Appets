@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <title>Appets</title>
+      <meta content="" name="description">
+      <meta content="" name="keywords">
+      <!-- Favicons -->
+      <link href="assets/img/favicon.png" rel="icon">
+      <!-- Ricordarsi di cambiare le favicon -->
+      <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+      <!-- Libraries/Frameworks CSS Files -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+      <!-- Main CSS File -->
+      <link href="assets/css/style.css" rel="stylesheet">
+      <!-- Libreria animazioni -->
+      <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+      <!-- Vue.js -->
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+      <script src="https://unpkg.com/vue-observe-visibility/dist/vue-observe-visibility.min.js"></script>
+   </head>
+   <body>
+      <div id="root">
+         <!-- ======= Header ======= -->
+         <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+               <div class="logo me-auto">
+                  <h1><a href="index.html">Appets</a></h1>
+               </div>
+               <nav id="navbar" class="navbar order-last order-lg-0">
+                  <ul>
+                     <li><a class="nav-link scrollto" href="#about">Chi siamo</a></li>
+                     <li><a class="nav-link scrollto" href="#restaurants">Ristoranti</a></li>
+                     <li><a class="nav-link scrollto" href="#events">Pacchetto Festa</a></li>
+                     <li><a class="nav-link scrollto" href="#jobs">Lavora con Appets</a></li>
+                     <li><a class="nav-link" href="#">Area ristoranti</a></li>
+                  </ul>
+                  <i class="bi bi-list mobile-nav-toggle"></i>
+               </nav>
+               <!-- .navbar -->
+            </div>
+         </header>
+         <!-- End Header -->
+         <!-- ======= Hero Section ======= -->
+         <section id="hero">
+            <div class="hero-container">
+               <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                  <div class="carousel-inner" role="listbox">
+                     <div class="carousel-item active" style="background: url(assets/img/slide/slide-1.jpg); background-size: cover;">
+                        <div class="carousel-container">
+                           <div class="carousel-content">
+                              <h2 class="animate__animated animate__fadeInDown">Appets</h2>
+                              <h2 class="animate__animated animate__fadeInDown"><span>I piatti</span> della tua città</h2>
+                              <p class="animate__animated animate__fadeInUp">Solo a Milano, vicino a te.</p>
+                              <form action="">
+                                 <div class="input-group input-group-sm mb-3 px-2">
+                                    <input type="text" class="form-control bg-dark border-light text-white" placeholder="Che tipo di cucina cerchi?" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                    <div class="input-group-append">
+                                       <button class="btn btn-light" id="basic-addon2">Cerca ristorante</button>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- End Hero -->
+         <main id="main">
+            <!-- ======= About Section ======= -->
+            <section id="about" class="about">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch">
+                        <div class="content">
+                           <h3>A casa tua con <strong>Appets</strong></h3>
+                           <br>
+                           <p class="about-text">
+                              Appets è l'app che ti permette di ricevere a domicilio i migliori piatti della tua città in pochi minuti. Mettiamo in contatto utenti, aziende e corrieri per renderlo possibile e operiamo esclusivamente a Milano. Il progetto nasce con l'obiettivo di trasformare il modo in cui i cittadini milanesi acquisiscono ciò di cui hanno bisogno rendendo le città più accessibili. In Appets vogliamo dare a tutti la possibilità di avere accesso a qualsiasi piatto cucinato dai migliori ristoranti della città, con un impatto sostenibile sull'economia, la società e l'ambiente: Siamo un'azienda tech-first responsabile.
+                           </p>
+                           <div class="about-image">
+                              <img src="assets/img/bomba.jpg" alt="">
+                           </div>
+                        </div>
+                        <br>
+                        <p class="about-text"><strong>Marco Zong detto "Il Bomba"<br>CEO & Fondatore</strong></p>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- End About Section -->
+            <!-- ======= Restaurants Section ======= -->
+            <section id="restaurants" class="restaurants">
+               <div class="container">
+                  <div class="section-title">
+                     <h2 v-observe-visibility="{ callback: (isVisible, entry) => animation_visibility(isVisible, entry, 'restaurants') }" :class="{ 'visible animate__animated animate__fadeInDown': animateSection.restaurants, 'invisible': !animateSection.restaurants }">I tuoi piatti preferiti. <span>Consegnati da noi</span></h2>
+                  </div>
+                  <p class="text-center">I nostri ristoranti per categoria</p>
+                  <br>
+                  <div class="row">
+                     <div class="col-lg-12 d-flex justify-content-center">
+                        <ul id="restaurants-flters">
+                           <li data-filter="*" class="filter-active">Tutti</li>
+                           <li data-filter=".filter-italian">Italiano</li>
+                           <li data-filter=".filter-chinese">Cinese</li>
+                           <li data-filter=".filter-japanese">Giapponese</li>
+                           <li data-filter=".filter-indian">Indiano</li>
+                           <li data-filter=".filter-mexican">Messicano</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="row restaurants-container">
+                     <div class="col-lg-6 restaurants-item filter-italian">
+                        <div class="">
+                           <a href="#">Ristorante</a> <span>NEW</span>
+                        </div>
+                        <div class="restaurants-description">
+                           Descrizione
+                        </div>
+                     </div>
+                     <div class="col-lg-6 restaurants-item filter-italian">
+                        <div class="">
+                           <a href="#">Ristorante</a> <span>NEW</span>
+                        </div>
+                        <div class="restaurants-description">
+                           Descrizione
+                        </div>
+                     </div>
+                     <div class="col-lg-6 restaurants-item filter-italian">
+                        <div class="">
+                           <a href="#">Ristorante</a> <span>NEW</span>
+                        </div>
+                        <div class="restaurants-description">
+                           Descrizione
+                        </div>
+                     </div>
+                     <div class="col-lg-6 restaurants-item filter-italian">
+                        <div class="">
+                           <a href="#">Ristorante</a> <span>NEW</span>
+                        </div>
+                        <div class="restaurants-description">
+                           Descrizione
+                        </div>
+                     </div>
+                     <div class="col-lg-6 restaurants-item filter-italian">
+                        <div class="">
+                           <a href="#">Ristorante</a> <span></span>
+                        </div>
+                        <div class="restaurants-description">
+                           Descrizione
+                        </div>
+                     </div>
+                     <div class="col-lg-6 restaurants-item filter-italian">
+                        <div class="">
+                           <a href="#">Ristorante</a> <span></span>
+                        </div>
+                        <div class="restaurants-description">
+                           Descrizione
+                        </div>
+                     </div>
+                     <div class="col-lg-6 restaurants-item filter-italian">
+                        <div class="">
+                           <a href="#">Ristorante</a> <span></span>
+                        </div>
+                        <div class="restaurants-description">
+                           Descrizione
+                        </div>
+                     </div>
+                     <div class="col-lg-6 restaurants-item filter-italian">
+                        <div class="">
+                           <a href="#">Ristorante</a> <span></span>
+                        </div>
+                        <div class="restaurants-description">
+                           Descrizione
+                        </div>
+                     </div>
+                     <div class="col-lg-6 restaurants-item filter-italian">
+                        <div class="">
+                           <a href="#">Ristorante</a> <span></span>
+                        </div>
+                        <div class="restaurants-description">
+                           Descrizione
+                        </div>
+                     </div>
+                     <div class="col-lg-6 restaurants-item filter-italian">
+                        <div class="">
+                           <a href="#">Ristorante</a> <span></span>
+                        </div>
+                        <div class="restaurants-description">
+                           Descrizione
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- End restaurants Section -->
+            <!-- ======= Events Section ======= -->
+            <section id="events" class="events">
+               <div class="container">
+                  <div class="section-title">
+                     <h2 v-observe-visibility="{ callback: (isVisible, entry) => animation_visibility(isVisible, entry, 'events') }" :class="{ 'visible animate__animated animate__fadeInLeft': animateSection.events, 'invisible': !animateSection.events }">Organizza il Tuo <span>Evento</span> con Appets</h2>
+                  </div>
+                  <div class="row event-item">
+                     <div class="col-lg-6">
+                        <img src="assets/img/buffet.jpg" class="img-fluid" alt="Immagine buffet">
+                     </div>
+                     <div class="col-lg-6 pt-4 pt-lg-0 content">
+                        <h3>Pacchetto Festa</h3>
+                        <div class="price">
+                           <p><span>A partire da 80 euro</span></p>
+                        </div>
+                        <p class="font-italic">
+                           Vuoi organizzare un evento? Una festa di compleanno? Un buffet per festeggiare qualche ricorrenza?
+                        </p>
+                        <p>
+                           Con Appets Catering ti mettiamo a disposizione un team di organizzatori che si occuperà per te di tutto. Il nostro staff ti porterà tutto il necessario, dall'aperitivo al dessert, e vi servirà comodamente nella vostra location proprio come se fossi al ristorante!
+                        </p>
+                        <p>
+                           Con noi la tua festa renderà invidiosi i tuoi ospiti! Chiamaci per informazioni al numero 800505050!
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- End Events Section -->
+            <!-- ======= Jobs Section ======= -->
+            <section id="jobs" class="jobs">
+               <div class="container">
+                  <div class="section-title">
+                     <h2 v-observe-visibility="{ callback: (isVisible, entry) => animation_visibility(isVisible, entry, 'jobs') }" :class="{ 'visible animate__animated animate__fadeInUp': animateSection.jobs, 'invisible': !animateSection.jobs }" >Lavora con <span>Appets</span></h2>
+                  </div>
+                  <p class="text-center">Appets è un'azienda che offre moltissime opportunità lavorative. Facci un pensiero!</p>
+                  <div class="row">
+                     <div class="col-lg-4 col-md-6">
+                        <div class="member">
+                           <div class="pic"><img src="assets/img/jobs/jobs-1.jpg" class="img-fluid" alt=""></div>
+                           <div class="member-info">
+                              <h4>Rider</h4>
+                              <span>Diventa un rider: flessibilità, ottimi guadagni e un mondo di vantaggi per te.</span>
+                              <div class="social">
+                                 <a href=""><i class="bi bi-twitter"></i></a>
+                                 <a href=""><i class="bi bi-facebook"></i></a>
+                                 <a href=""><i class="bi bi-instagram"></i></a>
+                                 <a href=""><i class="bi bi-linkedin"></i></a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="member">
+                           <div class="pic"><img src="assets/img/jobs/jobs-2.jpg" class="img-fluid" alt=""></div>
+                           <div class="member-info">
+                              <h4>Ristoranti</h4>
+                              <span>Diventa partner di Deliveroo e raggiungi sempre più clienti. Ci occupiamo noi della consegna, così che la tua unica preoccupazione sia continuare a preparare il miglior cibo.</span>
+                              <div class="social">
+                                 <a href=""><i class="bi bi-twitter"></i></a>
+                                 <a href=""><i class="bi bi-facebook"></i></a>
+                                 <a href=""><i class="bi bi-instagram"></i></a>
+                                 <a href=""><i class="bi bi-linkedin"></i></a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6">
+                        <div class="member">
+                           <div class="pic"><img src="assets/img/jobs/jobs-3.jpg" class="img-fluid" alt=""></div>
+                           <div class="member-info">
+                              <h4>Personale in sede</h4>
+                              <span>La nostra missione è trasformare il modo in cui le persone mangiano. È un obiettivo ambizioso, come noi, e ci servono persone che ci aiutino a raggiungerlo.</span>
+                              <div class="social">
+                                 <a href=""><i class="bi bi-twitter"></i></a>
+                                 <a href=""><i class="bi bi-facebook"></i></a>
+                                 <a href=""><i class="bi bi-instagram"></i></a>
+                                 <a href=""><i class="bi bi-linkedin"></i></a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- End Jobs Section -->
+            <!-- ======= Testimonials Section ======= -->
+            <section id="testimonials" class="testimonials">
+               <div class="section-title">
+                  <h2 class="animate__animated animate__fadeInRight"><span>Dicono di Noi</span></h2>
+               </div>
+               <div id="slider" class="slider-container">
+                  <div class="slider-wrapper">
+                     <div @click="sliderPrev()" class="prev">
+                        <i class="fas fa-angle-left"></i>
+                     </div>
+                     <div class="images">
+                        <img :src="imagesList[imagesIndex]" alt="">
+                     </div>
+                     <div @click="sliderNext()" class="next">
+                        <i class="fas fa-angle-right"></i>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!-- End testimonials Section -->
+         </main>
+         <!-- End #main -->
+         <!-- ======= Footer ======= -->
+         <footer id="footer">
+            <div class="container">
+               <h3>Appets</h3>
+               <p>Artigiani della qualità and be polite ¬_¬ </p>
+               <div class="social-links">
+                  <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                  <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+               </div>
+               <div class="copyright">
+                  &copy; Copyright <strong><span>Appets</span></strong>. All Rights Reserved
+               </div>
+               <div class="credits">
+                  Designed Boolean Team 2
+               </div>
+            </div>
+         </footer>
+         <!-- End Footer -->
+         <!-- Libreries/Frameworks JS Files -->
+         <script  type="application/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+      </div>
+      <script type="application/javascript" src="assets/js/main.js" charset="utf-8"></script>
+   </body>
+</html>
